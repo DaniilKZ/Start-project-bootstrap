@@ -20,7 +20,7 @@
 	* or 
 		* git push -f origin master
 
-/* end creat */
+/* end create */
 
 
 

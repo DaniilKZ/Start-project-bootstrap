@@ -22,10 +22,13 @@
 
 /* end create */
 
+/* Install gulp */
 
+npm init 
 
+npm i gulp --save-dev
 
-
+/* end install */
 
 
 

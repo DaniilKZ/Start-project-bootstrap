@@ -11,7 +11,12 @@ var gulp      	 = require('gulp'), // Подключаем Gulp
 gulp.task('clean', function() {
     return del.sync('public');  
 });
-   
+
+gulp.task('fonts', function(){
+    return gulp.src('resource/fonts/*.*')
+        .pipe(gulp.dest('public/fonts'));
+});
+
 gulp.task('scripts', function() {
     return gulp.src([ 
         	'resource/js/*.js', // Берем все JS
@@ -40,6 +45,6 @@ gulp.task('img', function() {
         .pipe(gulp.dest('public/img')); // Выгружаем на продакшен
 });
 
-gulp.task('build', ['clean', 'img', 'css', 'scripts'], function() {
+gulp.task('build', ['clean', 'fonts','img', 'css', 'scripts'], function() {
 
 });

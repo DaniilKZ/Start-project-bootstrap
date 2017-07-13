@@ -5,7 +5,8 @@ var gulp      	 = require('gulp'), // Подключаем Gulp
 	cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
   	cache        = require('gulp-cache'); // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
-
+	imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+    pngquant     = require('imagemin-pngquant'); // Подключаем библиотеку для работы с png
 
 gulp.task('clean', function() {
     return del.sync('public');  
@@ -29,16 +30,16 @@ gulp.task('css', function() {
 });
 
 gulp.task('img', function() {
-    return gulp.src('resource/img/**/*') // Берем все изображения  
+    return gulp.src('resource/img/*.*') // Берем все изображения  
         .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
             interlaced: true,
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
-        }))
+        })))
         .pipe(gulp.dest('public/img')); // Выгружаем на продакшен
 });
 
-gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'css', 'scripts'], function() {
 
 });

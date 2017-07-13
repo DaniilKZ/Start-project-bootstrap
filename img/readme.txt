@@ -1,4 +1,4 @@
-*Repeat image background: https://www.toptal.com
+*Repeat image background: https://www.toptal.com/designers/subtlepatterns/
 *Cover background image: 
 *	-https://unsplash.com
 *	-https://picjumbo.com
